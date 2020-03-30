@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <!-- <div id="nav">
+      <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    </div>-->
+    <router-view />
   </div>
 </template>
+
+<script lang='ts'>
+import { Vue, Component } from "vue-property-decorator";
+@Component
+export default class App extends Vue {
+  private created() {
+    // 判断用户状态
+    // this.$store.state.userStatus = false;
+    if (!this.$store.state.userStatus) this.$router.push("/login");
+  }
+}
+</script>
 
 <style lang="less">
 #app {
@@ -15,6 +27,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
 }
 
 #nav {
