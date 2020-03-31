@@ -6,13 +6,16 @@ import store from './store'
 // 清楚样式css
 import '@/assets/css/base.css'
 
-// elementui 按需引入
-import ElementUI from './plugin/elementui';
+import ElementUI from './plugin/elementui'
+import common from './common'
+import toyo from './components'
 Vue.use(ElementUI)
+  .use(common)
+  .use(toyo)
 
 Vue.config.productionTip = false
 
-new Vue({
+export const vue = new Vue({
   router,
   store,
   render: h => h(App)
