@@ -9,7 +9,7 @@ export default {
         // 获取密码
         Vue.prototype.$setPassWord = setStorage('password')
         // 通过name跳转
-        Vue.prototype.$jump = (name: string, query: any = {}) => vue.$router.push({ name, query }).catch(e => e)
+        Vue.prototype.$jump = (name: string, params: any = {}) => vue.$router.push({ name, params }).catch(e => e)
         // 通过path跳转
         Vue.prototype.$path = (path: string, query: any = {}) => vue.$router.push({ path, query }).catch(e => e)
         // 消息跳转
